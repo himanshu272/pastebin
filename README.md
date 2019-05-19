@@ -1,5 +1,5 @@
 # pastebin
-# This is a basic passtebin app
+# This is a basic pastebin app
 # Requirements
 pip install django
 # How to run:
