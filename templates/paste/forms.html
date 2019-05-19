@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Submit your paste!</title>
+    </head>
+    <body>
+        <a href='/paste/publicpastes'>View public pastes</a>
+        <br>
+        <div>
+        <form method='POST'>
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type='submit' value="Submit">
+        </form>
+        </div>
+    </body>
+</html>

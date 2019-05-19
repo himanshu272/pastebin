@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Public Pastes
+        </title>
+    </head>
+    <body>
+        <a href='/paste/yourdata'>Paste new data </a>
+        {% if input %}
+        <ul>
+            {%for item in input %}
+            <li>Username: {{ item.Username }}</li>
+            <li>Paste: {{ item.Text }}</li>
+            <br>
+            {% endfor %}
+        </ul>
+        {% else %}
+            There are no pastes as of yet !
+        {% endif %}
+    </body>
+</html>
