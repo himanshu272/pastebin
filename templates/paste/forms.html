@@ -1,16 +1,23 @@
-<html>
-    <head>
-        <title>Submit your paste!</title>
-    </head>
-    <body>
-        <a href='/paste/publicpastes'>View public pastes</a>
-        <br>
-        <div>
+{% extends "paste/base.html" %}
+
+{% block body_block %}
+<style>
+.container{
+                    opacity: 0.75;
+                    filter: alpha(opacity=75)
+                    
+            }
+</style>
+    <div class="card" allign="center">
+        <div class="card-body">
+        <h5> Submit your Username and text :</h5>
         <form method='POST'>
-        {{ form.as_p }}
+            <table>
+        {{ form.as_table }}
         {% csrf_token %}
-        <input type='submit' value="Submit">
+        </table>
+        <input class="btn btn-primary" type='submit' value="Submit">
         </form>
         </div>
-    </body>
-</html>
+    </div>
+{% endblock %}
