@@ -10,14 +10,17 @@ def public(request):
     dict = {"input":textpaste.objects.all()}
     return render(request, "paste/publicpaste.html", context = dict)
 
+def Complete(request):
+    return render(request, "paste/complete.html")
+
 def Data(request):
     form = data()
     if (request.method == 'POST'):
         form = data(request.POST)
         if form.is_valid():
             form.save(commit= True)
-            return intro(request)
+            return Complete(request)
         else:
             return HttpResponse("<h1> Invalid Data <h1>")
-
     return render(request, "paste/forms.html",{'form':form})
+

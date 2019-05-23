@@ -1,12 +1,19 @@
-<html>
-    <head>
-        <title>
-            This is the intro page!
-        </title>
-    </head>
-    <body>
-        <h1>Hello! Welcome to a basic Pastebin!</h1><br>
-        <a href='/paste/yourdata'>Paste new data </a>
-        <a href='/paste/publicpastes'>View public pastes</a>
-    </body>
-</html>
+{% extends "paste/base.html" %}
+
+{% block body_block %}
+<style>
+    .container{
+                    opacity: 0.8;
+                    filter: alpha(opacity=80)
+                    
+            }
+</style>
+        <div class="jumbotron" style="backgroud-color:lightblue">
+                <h1 class="display-4">Hello, World!</h1>
+                <p class="lead">This is a simple PasteBin webapp. A pastebin or text storage site is a type of online content hosting service where users can store plain text</p>
+                <hr class="my-4">
+                <p>This works on a Django web development server.</p>
+                <p>To know more about PasteBin and the vast usage it has online, click the button below!</p>
+                <a class="btn btn-primary" href="https://en.wikipedia.org/wiki/Pastebin">Learn More!</a>
+        </div>
+{% endblock %}
