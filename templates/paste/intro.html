@@ -19,7 +19,7 @@
             text-align: left;
         }
         </style>
-        <div class="container" style="padding-top: 1cm;">
+        <div class="container" style="padding-top: 1cm;"></div>
         <div class="jumbotron" style="background-color:lightblue;">
             <h1 class="display-4">Hello, World!</h1>
             <p class="lead">This is a simple PasteBin webapp. A pastebin or text storage site is a type of online content hosting service where users can store plain text</p>
@@ -32,8 +32,9 @@
         <h2 style="color: blanchedalmond">Public Pastes:</h2>
             {%for item in input %}
             <div class="card" style="width:35rem;">
-                <h7 class="card-head"><p class='data'>{{ item.Username }}</p></h7>
-                <div class="card-body">
+                <h4 class="card-head text-left w-100 p-3"><p class='data'>{{ item.Username }}</p>
+                <hr class="my-4"></h4>
+                <div class="card-body text-left w-100">
                 <p style="text-align: left; font-size: larger;" class='data'>{{ item.Text }}</p>
                 </div>
             </div>
@@ -45,5 +46,4 @@
             There are no pastes as of yet!
         </div>
         {% endif %}
-        </div>
 {% endblock %}
