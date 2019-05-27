@@ -11,32 +11,39 @@
             padding-bottom:
             padding-top: 60 px;     
              }
+        .flex-container{
+            -webkit-align-items: flex-start; 
+            align-items: flex-start;
+        }
+        .card{
+            text-align: left;
+        }
         </style>
-    <div class="pt-auto" style="padding-top: 1cm;">
-        <div class="jumbotron" style="backgroud-color:lightblue;">
-                <h1 class="display-4">Hello, World!</h1>
-                <p class="lead">This is a simple PasteBin webapp. A pastebin or text storage site is a type of online content hosting service where users can store plain text</p>
-                <hr class="my-4">
-                <p>This works on a Django web development server.</p>
-                <p>To know more about PasteBin and the vast usage it has online, click the button below!</p>
-                <a class="btn btn-primary" href="https://en.wikipedia.org/wiki/Pastebin">Learn More!</a>
+        <div class="container" style="padding-top: 1cm;">
+        <div class="jumbotron" style="background-color:lightblue;">
+            <h1 class="display-4">Hello, World!</h1>
+            <p class="lead">This is a simple PasteBin webapp. A pastebin or text storage site is a type of online content hosting service where users can store plain text</p>
+            <hr class="my-4">
+            <p>This works on a Django web development server.</p>
+            <p>To know more about PasteBin and the vast usage it has online, click the button below!</p>
+            <a class="btn btn-primary" href="https://en.wikipedia.org/wiki/Pastebin">Learn More!</a>
         </div>
         {% if input %}
         <h2 style="color: blanchedalmond">Public Pastes:</h2>
-        <ul class="list-group">
             {%for item in input %}
-            <p style="color: antiquewhite">User:</p>
-            <li class="list-group-item active" id='user'>{{ item.Username }}</li>
-            <p style="color: antiquewhite">Paste:</p>
-            <li class="list-group-item" id='text'>{{ item.Text }}</li>
-            <hr class="my-3">
+            <div class="card" style="width:35rem;">
+                <h7 class="card-head"><p class='data'>{{ item.Username }}</p></h7>
+                <div class="card-body">
+                <p style="text-align: left; font-size: larger;" class='data'>{{ item.Text }}</p>
+                </div>
+            </div>
+            <hr class="my-4">
             {% endfor %}
-        </ul>
         <script src="{% static 'js/app.js' %}"></script>
         {% else %}
         <div class="alert alert-danger" role="alert">
             There are no pastes as of yet!
         </div>
         {% endif %}
-    </div>
+        </div>
 {% endblock %}
