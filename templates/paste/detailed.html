@@ -2,6 +2,21 @@
 
 {% block body_block %}
 <div class="jumbotron">
-    {{ paste }}
+    <p class="language" hidden>{{ paste.language }}</p>
+    <pre><code>{{ paste.Text }}</code></pre>
+    <script>
+        var x = document.querySelector("p.language");
+        var z = document.querySelector("code");
+                    if(x.textContent=="python")
+                        z.classList.add("language-python");
+                    else if(x.textContent=="java")
+                        z.classList.add("language-java");
+                    else if(x.textContent=="javascript")
+                        z.classList.add("language-javascript");
+                    else if(x.textContent=="C++")
+                        z.classList.add("language-C++");
+                    else
+                        z.classList.add("language-none");
+    </script>
 </div>
 {% endblock %}

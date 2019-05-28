@@ -23,4 +23,4 @@ def Data(request):
 
 def detailed(request, str):
     obj = textpaste.objects.get(Username=str)
-    return render(request,"paste/detailed.html",{'paste':obj.Text})
+    return render(request,"paste/detailed.html",{'paste':obj})

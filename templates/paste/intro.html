@@ -7,17 +7,6 @@
                     opacity: 0.8;
                     filter: alpha(opacity=80)
             }
-        .jumbotron{
-            padding-bottom:
-            padding-top: 60 px;     
-             }
-        .flex-container{
-            -webkit-align-items: flex-start; 
-            align-items: flex-start;
-        }
-        .card{
-            text-align: left;
-        }
         </style>
         <div class="container" style="padding-top: 1cm;"></div>
         <div class="jumbotron" style="background-color:lightblue;">
@@ -32,11 +21,13 @@
         <h2 style="color: blanchedalmond">Public Pastes:</h2>
             {%for item in input %}
             <div class="card" style="width:35rem;">
-                <h4 class="card-head text-left w-100 p-3"><p class='data'>{{ item.Username }}</p>
-                <hr class="my-4"></h4>
-                <div class="card-body text-left w-100">
-                <p style="text-align: left; font-size: larger;" class='data'>{{ item.Text }}</p>
-                </div>
+                <h4 class="card-head text-left w-100 p-3"><p class='data'>{{ item.Username }}</p><!--
+                --><p class="language" hidden>{{ item.language }}</p><!--
+                --><hr class="my-4"></h4><!--
+                --><div class="card-body text-left w-100" style="padding-top: 0cm;" ><!--
+                --><pre><code>{{ item.Text }}</code></pre><!--
+                --><p class="extra"></p><!--
+                --></div>
             </div>
             <hr class="my-4">
             {% endfor %}
